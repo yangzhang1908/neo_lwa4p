@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="lwa4d">
+ <!-- neo_mp_500 -->
+  <xacro:include filename="$(find neo_mp_500)/robot_model/mp_500/mp_500.urdf.xacro" />
+
+ <!--lwa4d -->
+  <!-- common stuff -->
+  <xacro:include filename="$(find schunk_description)/urdf/common.xacro" />
+  <xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
+
+  <!-- schunk lwa4d -->
+  <xacro:include filename="$(find schunk_description)/urdf/lwa4d/lwa4d.urdf.xacro" />
+
+  <!-- arm -->
+   <!--<xacro:schunk_lwa4d name="arm" parent="connect" has_podest="true">-->
+  <xacro:schunk_lwa4d name="arm" parent="base_link" has_podest="true">
+   <origin xyz="-0.353 0 0.353" rpy="0 0 1.57" /> <!--slightly above gazebo plane-->
+  </xacro:schunk_lwa4d>
+    
+</robot>
+
